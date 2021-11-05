@@ -1,0 +1,297 @@
+February 19
+February 20
+February 21
+SEA at OAK
+February 22
+OAK at SEA
+February 23
+MIL at CHC
+CLE at CIN
+LAD at CWS
+SF at LAA
+CWS at OAK
+SD at SEA
+February 24
+AZ at CLE
+SEA at COL
+CIN at LAA
+LAA at LAD
+KC at OAK
+CWS at SD
+CHC at SF
+MIL at TEX
+February 25
+OAK at AZ
+SD at CHC
+TEX at CLE
+MIL at LAA
+CHC at LAD
+CIN at SEA
+CWS at SF
+February 26
+AZ at CHC
+SF at CIN
+CLE at COL
+KC at CWS
+LAD at KC
+SD at MIL
+LAA at OAK
+TEX at SEA
+February 27
+SEA at CLE
+CIN at CWS
+LAA at COL
+CLE at MIL
+LAD at OAK
+AZ at SD
+KC at SF
+CHC at TEX
+February 28
+CLE at AZ
+OAK at CHC
+MIL at CIN
+SD at KC
+TEX at LAA
+COL at LAD
+SF at MIL
+CWS at SEA
+March 1
+CHC at AZ
+LAD at CLE*
+KC at LAA
+SD at LAD*
+COL at OAK
+MIL at SEA
+CIN at SF
+CWS at TEX
+March 2
+LAD at AZ
+MIL at CHC
+LAA at CIN
+COL at CWS
+SEA at KC
+CLE at OAK
+SF at SD
+TEX at SF
+March 3
+CWS at CHC
+KC at CLE
+SF at COL
+OAK at LAA
+TEX at LAD
+CIN at MIL
+AZ at SEA
+SD at TEX
+March 4
+CIN at AZ
+CHC at CIN
+LAA at CWS
+CLE at SD
+LAD at SF
+COL at TEX
+March 5
+CWS at CLE
+MIL at COL
+SD at CWS
+AZ at KC
+CHC at LAA
+TEX at OAK
+SEA at SD
+March 6
+KC at CHC
+SD at CIN
+LAA at COL
+CLE at LAD*
+AZ at MIL
+OAK at SEA*
+SF at TEX
+March 7
+CLE at AZ
+COL at CHC
+SEA at CIN
+MIL at CWS
+LAA at KC
+LAD at LAA
+TEX at SD
+OAK at SF
+March 8
+SF at CLE*
+TEX at COL
+CIN at KC
+CWS at LAA
+KC at LAD*
+AZ at MIL
+SD at OAK
+CHC at SEA*
+March 9
+KC at AZ
+LAA at CHC
+COL at CLE
+AZ at COL
+SEA at LAD
+MIL at OAK
+CIN at SD
+CHC at SF
+CWS at TEX
+March 10
+COL at AZ
+AZ at CIN
+LAD at COL
+OAK at CWS
+SD at KC
+SEA at LAA
+CHC at MIL
+SF at OAK
+CLE at SEA
+TEX at SF
+March 11
+CIN at CLE
+OAK at COL
+SF at LAD
+CWS at MIL
+KC at SEA*
+KC at TEX
+LAA at TEX
+March 12
+TEX at AZ
+CIN at CHC
+SD at CIN
+SEA at CWS
+CWS at KC
+OAK at SD
+MIL at SF
+March 13
+MIL at CLE
+AZ at COL
+CLE at KC
+SD at LAA*
+CWS at LAD*
+CHC at OAK
+SF at SEA*
+March 14
+SF at AZ
+TEX at CHC
+COL at CLE
+TEX at KC
+CIN at LAD
+LAA at MIL
+LAD at SD
+March 15
+LAD at CIN
+KC at COL
+CHC at CWS
+AZ at LAA
+SD at MIL
+LAA at SF
+CLE at TEX
+March 16
+CHC at AZ
+TEX at CIN
+LAD at CWS
+MIL at KC
+CLE at LAA
+COL at MIL
+KC at SD
+SD at SF
+March 17
+CWS at AZ
+COL at CHC
+CLE at CIN
+MIL at LAD
+LAA at SD
+KC at SF
+AZ at TEX
+March 18
+SD at CLE
+CIN at COL
+SF at CWS
+LAD at TEX
+March 19
+SD at AZ
+SEA at CHC
+CWS at CIN
+CHC at KC
+COL at LAA*
+CLE at LAD*
+TEX at MIL
+March 20
+LAD at CHC
+LAA at CLE*
+KC at COL
+AZ at CWS
+SEA at OAK
+(TokyoDome)
+MIL at SD
+CLE at SF
+CIN at TEX
+March 21
+LAA at AZ
+SF at CHC
+KC at CIN
+TEX at CWS
+LAD at MIL
+SEA at OAK
+(TokyoDome)
+CIN at SEA*
+CLE at TEX
+March 22
+TEX at CHC
+CHC at CLE*
+SD at COL
+SF at KC
+CWS at LAA
+AZ at LAD
+CIN at MIL
+LAA at SEA*
+COL at SF
+March 23
+CIN at CLE
+CHC at COL
+CWS at LAD
+KC at MIL
+LAA at SD
+AZ at SF
+MIL at TEX
+March 24
+MIL at AZ
+COL at CIN
+CLE at CWS
+LAA at LAD
+(Dodger Stadium)
+SF at OAK
+(Oakland Coliseum)
+CHC at SD
+KC at TEX
+March 25
+CIN at ATL*
+(SunTrust Park)
+CWS at AZ
+(Chase Field)
+BOS at CHC
+LAD at LAA
+(Angel Stadium)
+KC at OMA*
+(Werner Park)
+SD at SEA*
+(Safeco Field)
+OAK at SF
+(AT&T Park)
+CLE at TEX
+(Globe Life Park)
+March 27
+CIN at ATL
+(SunTrust Park)
+CWS at AZ
+(Chase Field)
+BOS at CHC
+LAD at LAA
+(Angel Stadium)
+COL at MIN
+SD at SEA
+(Safeco Field)
+OAK at SF
+(AT&T Park)
+CLE at TEX
+(Globe Life Park)
+March 28
+March 29

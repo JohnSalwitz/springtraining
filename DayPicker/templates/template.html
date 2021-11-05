@@ -1,0 +1,83 @@
+{% block content %}
+
+
+    <!-- Here we are using attributes like
+        cellspacing and cellpadding -->
+
+    <!-- The purpose of the cellpadding is
+        the space that a user want between
+        the border of cell and its contents-->
+
+    <!-- cellspacing is used to specify the
+        space between the cell and its contents -->
+    <h2 style="color: orange;">
+         Spring Training 2022
+    </h2>
+
+    <table bgcolor="white"
+        cellspacing="21" cellpadding="21">
+        <caption align="top">
+        </caption>
+
+        <thead>
+            <tr>
+                <!-- Here we have applied inline style
+                     to make it more attractive-->
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>sat</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for w in range(4,9) %}
+            <tr>
+                {% for d in range(7) %}
+                    {% if w*7+d < calendar_data|length %}
+                        <td bgcolor={{calendar_data[w*7+d]["color"]}}/>{{ calendar_data[w*7+d]["day"] }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <h2 style="color: orange;">
+        TOP SCORES
+    </h2>
+    <div class="myDivElement">
+    <ul>
+        {% for n in top %}
+        <li>{{n}}</li>
+        {% endfor %}
+    </ul>
+
+    <h2 style="color: orange;">
+        SCORE BY DAYS
+    </h2>
+    <div class="myDivElement">
+    <ul>
+        {% for n in days %}
+        <li>{{n}}</li>
+        {% endfor %}
+    </ul>
+
+  <section>
+    <h3>SCORING FACTORS</h3>
+    <ul>
+        {% for n in factors %}
+        <ln>{{n}}</ln>
+        {% endfor %}
+    </ul>
+  </section>
+
+
+   <p><strong>Source File:</strong> : {{source_file}}</p>
+
+
+{% endblock %}

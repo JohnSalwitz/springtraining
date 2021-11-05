@@ -1,0 +1,46 @@
+__author__ = 'JSalwitz'
+
+import argparse, os, sys
+from BuildLog import *
+from TextToList import *
+from CreateHTML import *
+
+def listdir_full_path(folder):
+    return [os.path.join(folder, fn) for fn in os.listdir(folder)]
+
+def newest_file(folder, extension):
+    return max(listdir_full_path(folder), key = os.path.getctime)
+
+
+def main():
+    exit_code = 0
+    try:
+        parser = argparse.ArgumentParser(description="Identifies the best days to go to spring training")
+        parser.add_argument('schedule_folder', help='Location of schedule files')
+        args = parser.parse_args()
+
+        # get most recent history file...
+        file = newest_file(args.schedule_folder, '.txt')
+
+        BuildLog.header("Finding Best Spring Training Days")
+
+        BuildLog.step("Parsing "+ file)
+
+        schedule_list = text_file_to_list(file)
+        schedule, days = schedule_parser(schedule_list)
+        schedule, agenda = score_schedule(schedule, days, 4)
+
+        print_to_html(file, schedule, days, agenda)
+
+
+    except BaseException as error:
+        print('An exception occurred: {}'.format(error))
+
+    except:
+        exit_code = 1
+
+    finally:
+        sys.exit(exit_code)
+
+if __name__ == "__main__":
+    main()
