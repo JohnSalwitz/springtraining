@@ -1,0 +1,399 @@
+
+<head>
+
+	<style>
+		body{
+		width: 75%;
+		margin: auto;
+		font-family: "Helvetica Neue";
+		}
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .flex-item-left {
+      background-color: #f1f1f1;
+      padding: 10px;
+      flex: 50%;
+    }
+
+    .flex-item-right {
+      background-color: dodgerblue;
+      padding: 10px;
+      flex: 25%;
+    }
+
+		ul, ol {
+        /*margin: 0;padding: 0;*/
+        list-style: none;
+		}
+
+		li {
+        background: #37BC9B;
+        color: #fff;
+        counter-increment: myCounter;
+        margin: 0 0 30px 0;
+        padding: 13px;
+        position: relative;
+        top: 1em;
+        border-radius:  0em 2px 1em 1em;
+        padding-left: 2em;
+        font-size: 0.70em;
+        font-family: Constantia;
+
+		}
+
+		li:before{
+        content: counter(myCounter, decimal-leading-zero);
+        display: inline-block;
+        text-align: center;
+        font-size: 2em;
+        line-height: 1.3em;
+        background-color:  #48CFAD;
+        padding: 10px;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        left: -40px;
+        border-radius: 50%;
+        font-family: exo;
+		}
+
+		li:nth-child(even){
+		    background-color: #434A54;
+		}
+
+    table, th, td {
+      border: 1px solid grey;
+      bgcolor: "white";
+      cellspacing: 4;
+      cellpadding: 4;
+      width="100%";
+    }
+
+    .parentCell{
+        position: relative;
+    }
+    .tooltip{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        border: 1px;
+        background-color: white;
+        border: 1px solid green;
+        padding: 3px;
+        color: green;
+        top: 20px;
+        left: 20px;
+        font-size: 12px;
+        width: 250px;
+    }
+    .parentCell:hover span.tooltip{
+        display:block;
+    }
+    .details_div {
+        width: 80%;
+        padding: 8px;
+        font-size: 0.70em;
+        text-align: left;
+        border: 3px solid DodgerBlue;
+    }
+
+	</style>
+</head>
+
+
+<br/>
+<br/>
+<br/>
+<div class="flex-container">
+<div class="flex-item-left">
+    <h2 style="color: orange;">
+      Spring Training March 2022
+    </h2>
+
+    <table cellspacing="4" cellpadding="32" >
+      <caption align="top">
+      </caption>
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>27  <span class="tooltip">MIL at SF ==> 22.0 points&nbsp;(split)<br/>CHC at AZ ==> 20.0 points&nbsp;(split)<br/>SF at KC ==> 12.0 points&nbsp;(split)<br/>CHC at SEA ==> 12.0 points&nbsp;(split)<br/>AZ at MIL ==> 10.0 points&nbsp;(split)<br/>CWS at LAA ==> 7.0 points&nbsp;(split)<br/>CLE at OAK ==> 7.0 points&nbsp;(split)<br/>CIN at LAA ==> 7.0 points&nbsp;(split)<br/>MIL at COL ==> 5.0 points&nbsp;(split)<br/>TEX at CIN ==> -3.0 points&nbsp;(split)<br/>SD at LAD ==> -3.0 points&nbsp;(split)<br/>CWS at CLE ==> -3.0 points&nbsp;(split)<br/>AZ at KC ==> -3.0 points&nbsp;(split)<br/>SEA at LAD ==> -3.0 points&nbsp;(split)<br/>OAK at SD ==> -3.0 points&nbsp;(split)<br/>COL at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>28  <span class="tooltip">no games today</span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#85bd24"/>01  <span class="tooltip">SF at CHC ==> 37.0 points&nbsp;(split)<br/>SEA at MIL ==> 23.0 points<br/>LAD at OAK ==> 20.0 points<br/>CHC at TEX ==> 12.0 points&nbsp;(split)<br/>AZ at CIN ==> 10.0 points<br/>COL at CLE ==> 10.0 points<br/>KC at CWS ==> 10.0 points<br/>LAA at SD ==> 10.0 points<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#96aa2d"/>02  <span class="tooltip">LAA at CHC ==> 35.0 points<br/>CWS at SF ==> 22.0 points&nbsp;(split)<br/>CIN at OAK ==> 20.0 points<br/>TEX at AZ ==> 18.0 points<br/>SF at SEA ==> 12.0 points&nbsp;(split)<br/>MIL at CLE ==> 10.0 points<br/>SD at KC ==> 10.0 points<br/>COL at LAD ==> 10.0 points<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#85bd24"/>03  <span class="tooltip">SF at LAA ==> 35.0 points<br/>CHC at SD ==> 25.0 points<br/>LAD at MIL ==> 23.0 points<br/>SEA at COL ==> 18.0 points<br/>AZ at CLE ==> 10.0 points<br/>CIN at CWS ==> 10.0 points<br/>KC at TEX ==> 10.0 points<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#3be80d"/>04  <span class="tooltip">OAK at CHC ==> 35.0 points<br/>TEX at SF ==> 35.0 points<br/>CWS at LAA ==> 20.0 points<br/>SD at AZ ==> 18.0 points<br/>COL at CIN ==> 10.0 points<br/>CLE at SEA ==> 10.0 points<br/>MIL at KC ==> -3.0 points&nbsp;(split)<br/>KC at LAD ==> -18.0 points&nbsp;(night)&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#0f0"/>05  <span class="tooltip">CHC at MIL ==> 38.0 points<br/>COL at SF ==> 35.0 points<br/>LAA at OAK ==> 20.0 points<br/>SEA at AZ ==> 18.0 points<br/>KC at CIN ==> 10.0 points<br/>CLE at SD ==> 10.0 points<br/>CWS at LAD ==> -3.0 points&nbsp;(split)<br/>LAD at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td  class="parentCell" bgcolor="#85bd24"/>06  <span class="tooltip">AZ at CHC ==> 35.0 points<br/>SF at CLE ==> 25.0 points<br/>TEX at OAK ==> 20.0 points<br/>SD at COL ==> 18.0 points<br/>MIL at CWS ==> 10.0 points<br/>CIN at SEA ==> 10.0 points<br/>LAD at LAA ==> 7.0 points&nbsp;(split)<br/>LAA at KC ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#5e504c"/>07  <span class="tooltip">CHC at COL ==> 33.0 points<br/>OAK at KC ==> 10.0 points<br/>CLE at LAD ==> 10.0 points<br/>TEX at MIL ==> 10.0 points&nbsp;(split)<br/>SD at SEA ==> 10.0 points<br/>MIL at CIN ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#96aa2d"/>08  <span class="tooltip">CHC at LAA ==> 35.0 points<br/>SD at SF ==> 22.0 points&nbsp;(split)<br/>SEA at OAK ==> 20.0 points<br/>CLE at AZ ==> 5.0 points&nbsp;(split)<br/>COL at CLE ==> -3.0 points&nbsp;(split)<br/>TEX at CWS ==> -3.0 points&nbsp;(split)<br/>CIN at SD ==> -3.0 points&nbsp;(split)<br/>CWS at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#85bd24"/>09  <span class="tooltip">SF at MIL ==> 38.0 points<br/>CWS at CHC ==> 22.0 points&nbsp;(split)<br/>CHC at KC ==> 12.0 points&nbsp;(split)<br/>AZ at SD ==> 10.0 points<br/>CIN at COL ==> 5.0 points&nbsp;(split)<br/>LAA at CIN ==> -3.0 points&nbsp;(split)<br/>OAK at LAD ==> -5.0 points&nbsp;(night)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#85bd24"/>10  <span class="tooltip">CHC at SF ==> 37.0 points&nbsp;(split)<br/>SF at OAK ==> 22.0 points&nbsp;(split)<br/>COL at LAA ==> 20.0 points<br/>KC at CLE ==> 10.0 points<br/>LAD at CWS ==> 10.0 points<br/>MIL at SEA ==> 10.0 points<br/>SD at TEX ==> 10.0 points<br/>OAK at AZ ==> 5.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>11  <span class="tooltip">CWS at MIL ==> 23.0 points<br/>KC at CHC ==> 22.0 points&nbsp;(split)<br/>SD at OAK ==> 20.0 points<br/>AZ at COL ==> 18.0 points<br/>TEX at CLE ==> 10.0 points<br/>SF at LAD ==> 10.0 points&nbsp;(night)<br/>LAA at SEA ==> 10.0 points<br/>CIN at KC ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#77c81e"/>12  <span class="tooltip">CHC at MIL ==> 38.0 points<br/>LAA at SF ==> 22.0 points&nbsp;(split)<br/>OAK at COL ==> 18.0 points<br/>CWS at CIN ==> 10.0 points<br/>SEA at KC ==> 10.0 points<br/>AZ at LAD ==> 10.0 points<br/>CLE at SD ==> 10.0 points<br/>TEX at LAA ==> 7.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td  class="parentCell" bgcolor="#3be80d"/>13  <span class="tooltip">CIN at CHC ==> 35.0 points<br/>SEA at SF ==> 35.0 points<br/>KC at LAA ==> 20.0 points<br/>MIL at AZ ==> 18.0 points<br/>COL at CWS ==> 10.0 points<br/>OAK at TEX ==> 10.0 points<br/>LAD at CLE ==> -3.0 points&nbsp;(split)<br/>LAD at SD ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#3be80d"/>14  <span class="tooltip">COL at CHC ==> 35.0 points<br/>SF at AZ ==> 33.0 points<br/>CLE at MIL ==> 23.0 points<br/>SD at CWS ==> 10.0 points<br/>TEX at CIN ==> -3.0 points&nbsp;(split)<br/>LAD at SEA ==> -3.0 points&nbsp;(split)<br/>SEA at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#65524a"/>15  <span class="tooltip">SF at CIN ==> 25.0 points<br/>CHC at LAD ==> 25.0 points<br/>CLE at LAA ==> 20.0 points<br/>MIL at OAK ==> 20.0 points<br/>AZ at SEA ==> 10.0 points<br/>TEX at COL ==> 5.0 points&nbsp;(split)<br/>COL at KC ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>16  <span class="tooltip">LAA at AZ ==> 18.0 points<br/>OAK at CLE ==> 10.0 points<br/>SEA at CWS ==> 10.0 points<br/>MIL at TEX ==> 10.0 points<br/>KC at SD ==> -5.0 points&nbsp;(night)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#9aa032"/>17  <span class="tooltip">OAK at SF ==> 35.0 points<br/>LAA at CHC ==> 20.0 points&nbsp;(night)<br/>AZ at COL ==> 18.0 points<br/>CIN at CLE ==> 10.0 points<br/>SD at MIL ==> 10.0 points&nbsp;(split)<br/>CWS at KC ==> -3.0 points&nbsp;(split)<br/>MIL at LAD ==> -18.0 points&nbsp;(night)&nbsp;(split)<br/>KC at SEA ==> -18.0 points&nbsp;(night)&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>18  <span class="tooltip">KC at MIL ==> 23.0 points<br/>CLE at CHC ==> 22.0 points&nbsp;(split)<br/>COL at OAK ==> 20.0 points<br/>LAD at AZ ==> 18.0 points<br/>CHC at CWS ==> 12.0 points&nbsp;(split)<br/>SF at SD ==> 12.0 points&nbsp;(split)<br/>SEA at LAA ==> 7.0 points&nbsp;(split)<br/>SD at CIN ==> -3.0 points&nbsp;(split)<br/>LAA at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#3be80d"/>19  <span class="tooltip">CHC at OAK ==> 35.0 points<br/>KC at SF ==> 35.0 points<br/>MIL at LAA ==> 20.0 points<br/>CIN at AZ ==> 18.0 points<br/>LAD at CWS ==> 10.0 points<br/>COL at SEA ==> 10.0 points<br/>SD at CLE ==> -3.0 points&nbsp;(split)<br/>CLE at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td  class="parentCell" bgcolor="#8fb329"/>20  <span class="tooltip">AZ at SF ==> 35.0 points<br/>CHC at CIN ==> 25.0 points<br/>CWS at COL ==> 18.0 points<br/>CLE at KC ==> 10.0 points<br/>LAA at LAD ==> 10.0 points<br/>OAK at MIL ==> 10.0 points&nbsp;(split)<br/>TEX at SEA ==> 10.0 points<br/>SD at OAK ==> 7.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#85bd24"/>21  <span class="tooltip">MIL at CHC ==> 35.0 points<br/>SF at CWS ==> 25.0 points<br/>OAK at LAA ==> 20.0 points<br/>LAD at COL ==> 5.0 points&nbsp;(split)<br/>LAD at CIN ==> -3.0 points&nbsp;(split)<br/>TEX at SD ==> -3.0 points&nbsp;(split)<br/>CIN at TEX ==> -3.0 points&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#0f0"/>22  <span class="tooltip">SF at CHC ==> 50.0 points<br/>COL at MIL ==> 23.0 points<br/>CWS at AZ ==> 18.0 points<br/>LAA at CLE ==> 10.0 points<br/>TEX at LAD ==> 10.0 points<br/>SEA at KC ==> -3.0 points&nbsp;(split)<br/>OAK at SEA ==> -18.0 points&nbsp;(night)&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#9aa032"/>23  <span class="tooltip">LAD at SF ==> 35.0 points<br/>KC at OAK ==> 20.0 points<br/>LAA at COL ==> 18.0 points<br/>SEA at CIN ==> 10.0 points<br/>AZ at TEX ==> 10.0 points<br/>CLE at CWS ==> -3.0 points&nbsp;(split)<br/>CWS at SD ==> -18.0 points&nbsp;(night)&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#979236"/>24  <span class="tooltip">CLE at SF ==> 35.0 points<br/>TEX at CHC ==> 20.0 points&nbsp;(night)<br/>OAK at CIN ==> 10.0 points<br/>SD at LAA ==> 7.0 points&nbsp;(split)<br/>KC at AZ ==> 5.0 points&nbsp;(split)<br/>LAA at CWS ==> -3.0 points&nbsp;(split)<br/>LAD at KC ==> -3.0 points&nbsp;(split)<br/>MIL at SEA ==> -5.0 points&nbsp;(night)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#6d5747"/>25  <span class="tooltip">CHC at LAD ==> 25.0 points<br/>SF at TEX ==> 25.0 points<br/>CIN at MIL ==> 23.0 points<br/>AZ at LAA ==> 20.0 points<br/>CWS at OAK ==> 20.0 points<br/>SEA at CLE ==> 10.0 points<br/>KC at COL ==> 5.0 points&nbsp;(split)<br/>COL at SD ==> -18.0 points&nbsp;(night)&nbsp;(split)<br/></span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>26  <span class="tooltip">SD at CHC ==> 22.0 points&nbsp;(split)<br/>MIL at SF ==> 22.0 points&nbsp;(split)<br/>SF at COL ==> 20.0 points&nbsp;(split)<br/>CHC at CLE ==> 12.0 points&nbsp;(split)<br/>TEX at KC ==> 10.0 points<br/>CIN at LAD ==> 10.0 points<br/>OAK at MIL ==> 10.0 points&nbsp;(split)<br/>AZ at OAK ==> 7.0 points&nbsp;(split)<br/>CWS at SEA ==> -5.0 points&nbsp;(night)<br/></span></td>
+
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>27  <span class="tooltip">no games today</span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>28  <span class="tooltip">no games today</span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>29  <span class="tooltip">no games today</span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>30  <span class="tooltip">no games today</span></td>
+
+          
+          
+          
+          <td  class="parentCell" bgcolor="#505050"/>31  <span class="tooltip">no games today</span></td>
+
+          
+          
+          
+          
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <br/>
+    <div class="details_div">
+      <h3 style="color: orange";>SCORING FACTORS</h3>
+        
+          earliest_date = 2022-02-01
+          <br/>
+        
+          latest_date = 2022-03-31
+          <br/>
+        
+          base_game_score = 10
+          <br/>
+        
+          home_bonus = {'SF': 25, 'CHC': 25, 'MIL': 13, 'OAK': 10, 'LAA': 10, 'COL': 8, 'AZ': 8}
+          <br/>
+        
+          visitor_bonus = {'SF': 15, 'CHC': 15}
+          <br/>
+        
+          game_weights = [0.6, 0.3, 0.1]
+          <br/>
+        
+          st_patricks_day = {datetime.date(2017, 3, 17): 5}
+          <br/>
+        
+          night_game_penalty = -15
+          <br/>
+        
+          split_squad_penalty = -13
+          <br/>
+        
+          not_a_weekend_penalty = -15
+          <br/>
+        
+    </div>
+</div>
+
+<div class="flex-item-right">
+<h2 style="color: orange;">
+	TOP SCORES
+</h2>
+
+<ul>
+	
+	<li>Saturday, Mar 19 thru Tuesday, Mar 22 <br/> 133.0 points</li>
+	
+	<li>Thursday, Mar 03 thru Sunday, Mar 06 <br/> 130.1 points</li>
+	
+	<li>Friday, Mar 04 thru Monday, Mar 07 <br/> 123.1 points</li>
+	
+	<li>Saturday, Mar 12 thru Tuesday, Mar 15 <br/> 122.4 points</li>
+	
+	<li>Friday, Mar 11 thru Monday, Mar 14 <br/> 120.3 points</li>
+	
+	<li>Saturday, Mar 05 thru Tuesday, Mar 08 <br/> 119.2 points</li>
+	
+	<li>Thursday, Mar 10 thru Sunday, Mar 13 <br/> 117.9 points</li>
+	
+	<li>Friday, Mar 18 thru Monday, Mar 21 <br/> 116.7 points</li>
+	
+	<li>Thursday, Mar 17 thru Sunday, Mar 20 <br/> 115.0 points</li>
+	
+	<li>Wednesday, Mar 02 thru Saturday, Mar 05 <br/> 114.2 points</li>
+	
+</ul>
+  </div>
+    </div>
+
+
+<br/>
+<br/>
+<br/>
+
