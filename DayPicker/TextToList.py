@@ -1,9 +1,7 @@
-
 # Reads a text file and stores in list...
 import re, collections
 import os
 from datetime import *
-
 
 file_re = re.compile("Schedule_([0-9]{4})")
 date_re = re.compile("([A-Za-z]+) ([0-9]+)")
@@ -24,23 +22,26 @@ def text_file_to_list(full_path):
 # the weights (that drive scores) for various things...
 def build_weights(full_path):
     global this_year, score_weights
-    fname = os.path.basename(full_path);
-    m = file_re.match(fname)
-    if not m:
-        raise NameError("File name of schedule file needs to be Schedule_YYYY.txt")
-    this_year = int(m.group(1))
+
+    this_year = get_year_from_schedule_file(full_path);
 
     score_weights["earliest_date"] = date(this_year, 2, 1)
     score_weights["latest_date"] = date(this_year, 3, 31)
     score_weights["base_game_score"] = 10
-    score_weights["home_bonus"] = {"SF": 25, "CHC": 25, "OAK": 10, "LAA": 10, "MIL": 10, "COL": 8, "AZ": 8}
+    score_weights["home_bonus"] = {"SF": 25, "CHC": 25, "MIL": 13, "OAK": 10, "LAA": 10, "COL": 8, "AZ": 8}
     score_weights["visitor_bonus"] = {"SF": 15, "CHC": 15}
     score_weights["game_weights"] = [0.6, 0.3, 0.1]
     score_weights["st_patricks_day"] = {date(2017, 3, 17): 5}
     score_weights["night_game_penalty"] = -15
     score_weights["split_squad_penalty"] = -13
-    score_weights["not_a_weekend_penalty"] = -25
+    score_weights["not_a_weekend_penalty"] = -15
 
+def get_year_from_schedule_file(full_path):
+  fname = os.path.basename(full_path);
+  m = file_re.match(fname)
+  if not m:
+    raise NameError("File name of schedule file needs to be Schedule_YYYY.txt")
+  return int(m.group(1))
 
 # reads/parses the text schedule file
 def schedule_parser(schedule_list):
@@ -149,37 +150,17 @@ def date_to_string(dt):
 def get_score_weights():
     return score_weights
 
-def get_scoring():
-    out = []
-    for k, v in score_weights.items():
-        out.append("{0} = {1}".format(k, v))
-    return out
-
-def get_score_days(schedule):
-    out = []
-    for s in schedule:
-        dt = s["date"]
-        out.append("{0} ==> {1:.1f} points".format(date_to_string(dt), s["score"]))
-        for g in s["games"]:
-            str = "&nbsp;&nbsp;&nbsp;&nbsp;{0} at {1} ==> {2:.1f} points".format(g["visitor"], g["home"], g["score"])
-            if not g["day_game"]:
-                str = str + "&nbsp;(night)"
-            if g["split_squad"]:
-                str = str + "&nbsp;(split)"
-            out.append(str)
-    return out
-
 def get_schedule(agenda, schedule, detail = True):
     out = []
     for weekend in agenda:
-        out.append("{0} thru {1} ==> {2:.1f} points".format(date_to_string(weekend[0][0]),
+        out.append("{0} thru {1} <br/> {2:.1f} points".format(date_to_string(weekend[0][0]),
                                                        date_to_string(weekend[0][-1]),
                                                        weekend[1]))
         if detail:
             weekend_dates = [s for s in schedule if s["date"] in weekend[0]]
             for s in weekend_dates:
                 dt = s["date"]
-                out.append("&nbsp;&nbsp;&nbsp;&nbsp;{0} ==> {1:.1f} points".format(date_to_string(dt), s["score"]))
+                out.append("&nbsp;&nbsp;&nbsp;&nbsp;{0} x {1:.1f} points".format(date_to_string(dt), s["score"]))
                 for g in s["games"]:
                     str = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{0} at {1} ==> {2:.1f} points".format(g["visitor"], g["home"], g["score"])
                     if not g["day_game"]:
@@ -189,41 +170,6 @@ def get_schedule(agenda, schedule, detail = True):
                     out.append(str)
             out.append("")
     return out
-
-def print_scoring():
-    print("")
-    print("----------------------------------------------------------------------")
-    print("Scoring Factors...")
-    for k, v in score_weights.items():
-        print("   {0} = {1}".format(k, v))
-    print("----------------------------------------------------------------------")
-    print("")
-
-def print_schedule(agenda, schedule, detail = True):
-
-    for weekend in agenda:
-        print("{0} thru {1} ==> {2:.1f} points".format(date_to_string(weekend[0][0]),
-                                                       date_to_string(weekend[0][-1]),
-                                                       weekend[1]))
-        if detail:
-            weekend_dates = [s for s in schedule if s["date"] in weekend[0]]
-            for s in weekend_dates:
-                dt = s["date"]
-                print("   {0} ==> {1:.1f} points".format(date_to_string(dt), s["score"]))
-                for g in s["games"]:
-                    str = "      {0} at {1} ==> {2:.1f} points".format(g["visitor"], g["home"], g["score"])
-                    if not g["day_game"]:
-                        str = str + " (night)"
-                    if g["split_squad"]:
-                        str = str + " (split)"
-                    print(str)
-            print("")
-    print("----------------------------------------------------------------------")
-    print("")
-    print("")
-
-
-
 
 
 

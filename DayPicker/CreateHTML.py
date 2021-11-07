@@ -16,21 +16,24 @@ def get_color(value, min, max):
         i = 0
     return colors[i].hex
 
+def get_score_day(s):
+  out = ""
+  for g in s["games"]:
+    out = out + "{0} at {1} ==> {2:.1f} points".format(g["visitor"], g["home"], g["score"])
+    if not g["day_game"]:
+      out = out + "&nbsp;(night)"
+    if g["split_squad"]:
+      out = out + "&nbsp;(split)"
+    out = out + "<br/>"
+  return out
 
-def print_to_html(file, schedule, days, agenda):
-    if 0:
-        print_scoring()
-        print("------------------- TOP SCORES -----------------------------------")
-        agenda = sort_agenda_by_score(agenda)
-        print_schedule(agenda, schedule, False)
-        print("------------------- SCORES BY DATE -----------------------------------")
-        agenda = sort_agenda_by_date(agenda)
-        print_schedule(agenda, schedule, False)
-        print("------------------- SCORING DETAIL -----------------------------------")
-        agenda = sort_agenda_by_score(agenda)
-        print_schedule(agenda, schedule, True)
+def get_scoring():
+  out = []
+  for k, v in score_weights.items():
+    out.append("{0} = {1}".format(k, v))
+  return out
 
-
+def print_to_html(source_file, report_folder, schedule, agenda):
     with open('./templates/template.html') as file_:
         template = Template(file_.read())
         factors = get_scoring()
@@ -47,23 +50,23 @@ def print_to_html(file, schedule, days, agenda):
         date = weights["earliest_date"]
         date -= datetime.timedelta(days=first_day_of_month)
 
-
         while date <= score_weights["latest_date"]:
             schd = next((s for s in schedule if s["date"] == date), None)
-
             if(schd != None):
                 color = get_color(schd["score"], 22, 35)
+                games = get_score_day(schd)
             else:
                 color = get_color(0, 22, 35)
-            calendar_data.append({'day': date.strftime("%d"), 'color' : '"{}"'.format(color)})
+                games = "no games today"
+            calendar_data.append({'day': date.strftime("%d"), 'color' : '"{}"'.format(color), 'games' : games})
             date += delta
 
-        agenda = sort_agenda_by_score(agenda)
-        top = get_schedule(agenda, schedule, False)
-        dates = get_schedule(agenda, schedule, False)
-        details = get_schedule(agenda, schedule, True)
-        days = get_score_days(schedule)
+        sorted_agenda = sort_agenda_by_score(agenda)
+        dates = get_schedule(sorted_agenda, schedule, False)
+        top = get_schedule(sorted_agenda, schedule, False)[:10]
 
-        f = open("spring_training_report.html", "w")
-        f.write(template.render(calendar_data=calendar_data, factors=factors, top = top, dates = dates, details = details, days = days, source_file = file))
+        year = get_year_from_schedule_file(source_file)
+        fname = 'spring_training_{}.html'.format(year)
+        f = open(os.path.join(report_folder, fname), "w")
+        f.write(template.render(year = year, calendar_data=calendar_data, factors=factors, top = top, dates = dates, source_file = source_file))
         f.close()

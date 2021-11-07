@@ -1,83 +1,175 @@
 {% block content %}
+<head>
+
+	<style>
+		body{
+		width: 75%;
+		margin: auto;
+		font-family: "Helvetica Neue";
+		}
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .flex-item-left {
+      background-color: #f1f1f1;
+      padding: 10px;
+      flex: 50%;
+    }
+
+    .flex-item-right {
+      background-color: dodgerblue;
+      padding: 10px;
+      flex: 25%;
+    }
+
+		ul, ol {
+        /*margin: 0;padding: 0;*/
+        list-style: none;
+		}
+
+		li {
+        background: #37BC9B;
+        color: #fff;
+        counter-increment: myCounter;
+        margin: 0 0 30px 0;
+        padding: 13px;
+        position: relative;
+        top: 1em;
+        border-radius:  0em 2px 1em 1em;
+        padding-left: 2em;
+        font-size: 0.70em;
+        font-family: Constantia;
+
+		}
+
+		li:before{
+        content: counter(myCounter, decimal-leading-zero);
+        display: inline-block;
+        text-align: center;
+        font-size: 2em;
+        line-height: 1.3em;
+        background-color:  #48CFAD;
+        padding: 10px;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        left: -40px;
+        border-radius: 50%;
+        font-family: exo;
+		}
+
+		li:nth-child(even){
+		    background-color: #434A54;
+		}
+
+    table, th, td {
+      border: 1px solid grey;
+      bgcolor: "white";
+      cellspacing: 4;
+      cellpadding: 4;
+      width="100%";
+    }
+
+    .parentCell{
+        position: relative;
+    }
+    .tooltip{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        border: 1px;
+        background-color: white;
+        border: 1px solid green;
+        padding: 3px;
+        color: green;
+        top: 20px;
+        left: 20px;
+        font-size: 12px;
+        width: 250px;
+    }
+    .parentCell:hover span.tooltip{
+        display:block;
+    }
+    .details_div {
+        width: 80%;
+        padding: 8px;
+        font-size: 0.70em;
+        text-align: left;
+        border: 3px solid DodgerBlue;
+    }
+
+	</style>
+</head>
 
 
-    <!-- Here we are using attributes like
-        cellspacing and cellpadding -->
-
-    <!-- The purpose of the cellpadding is
-        the space that a user want between
-        the border of cell and its contents-->
-
-    <!-- cellspacing is used to specify the
-        space between the cell and its contents -->
+<br/>
+<br/>
+<br/>
+<div class="flex-container">
+<div class="flex-item-left">
     <h2 style="color: orange;">
-         Spring Training 2022
+      Spring Training March {{year}}
     </h2>
 
-    <table bgcolor="white"
-        cellspacing="21" cellpadding="21">
-        <caption align="top">
-        </caption>
+    <table cellspacing="4" cellpadding="32" >
+      <caption align="top">
+      </caption>
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for w in range(4,9) %}
+        <tr>
+          {% for d in range(7) %}
+          {% if w*7+d < calendar_data|length %}
+          <td  class="parentCell" bgcolor={{calendar_data[w*7+d]["color"]}}/>{{ calendar_data[w*7+d]["day"] }}  <span class="tooltip">{{calendar_data[w*7+d]["games"]}}</span></td>
 
-        <thead>
-            <tr>
-                <!-- Here we have applied inline style
-                     to make it more attractive-->
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>sat</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for w in range(4,9) %}
-            <tr>
-                {% for d in range(7) %}
-                    {% if w*7+d < calendar_data|length %}
-                        <td bgcolor={{calendar_data[w*7+d]["color"]}}/>{{ calendar_data[w*7+d]["day"] }}</td>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </tbody>
+          {% endif %}
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
 
-
-    <h2 style="color: orange;">
-        TOP SCORES
-    </h2>
-    <div class="myDivElement">
-    <ul>
-        {% for n in top %}
-        <li>{{n}}</li>
-        {% endfor %}
-    </ul>
-
-    <h2 style="color: orange;">
-        SCORE BY DAYS
-    </h2>
-    <div class="myDivElement">
-    <ul>
-        {% for n in days %}
-        <li>{{n}}</li>
-        {% endfor %}
-    </ul>
-
-  <section>
-    <h3>SCORING FACTORS</h3>
-    <ul>
+    <br/>
+    <div class="details_div">
+      <h3 style="color: orange";>SCORING FACTORS</h3>
         {% for n in factors %}
-        <ln>{{n}}</ln>
+          {{n}}
+          <br/>
         {% endfor %}
-    </ul>
-  </section>
+    </div>
+</div>
+
+<div class="flex-item-right">
+<h2 style="color: orange;">
+	TOP SCORES
+</h2>
+
+<ul>
+	{% for n in top %}
+	<li>{{n}}</li>
+	{% endfor %}
+</ul>
+  </div>
+    </div>
 
 
-   <p><strong>Source File:</strong> : {{source_file}}</p>
-
+<br/>
+<br/>
+<br/>
 
 {% endblock %}
