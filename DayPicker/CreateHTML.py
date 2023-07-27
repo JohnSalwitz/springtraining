@@ -4,10 +4,13 @@ from TextToList import *
 import datetime
 import math
 
-color_steps = 20
-colors = list(Color("#505050").range_to(Color("#00FF00"),color_steps))
+
+
+colors = [Color("#FFFFFF"),Color("#E2F7E2"),Color("#E2F7E2"),Color("#E2F7E2"),Color("#C5F0C5"),Color("#A7E8A8"),Color("#8AE08B"),Color("#6DD86E"),Color("#50D151"),Color("#32C934"),Color("#15C117")]
+
 def get_color(value, min, max):
-    global color_steps, colors
+    global colors
+    color_steps = len(colors)
     i = float(value - min) / (max - min) * color_steps
     i = math.floor(i)
     if(i > color_steps-1):

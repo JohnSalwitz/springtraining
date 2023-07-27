@@ -8,8 +8,9 @@ from CreateHTML import *
 def listdir_full_path(folder):
     return [os.path.join(folder, fn) for fn in os.listdir(folder)]
 
-def newest_file(folder, extension):
-    return max(listdir_full_path(folder), key = os.path.getctime)
+def latest_file(folder, extension):
+    files = listdir_full_path(folder)
+    return max(files)
 
 
 def main():
@@ -21,7 +22,7 @@ def main():
         args = parser.parse_args()
 
         # get most recent history file...
-        source_file = newest_file(args.schedule_folder, '.txt')
+        source_file = latest_file(args.schedule_folder, '.txt')
 
         BuildLog.header("Finding Best Spring Training Days")
 
